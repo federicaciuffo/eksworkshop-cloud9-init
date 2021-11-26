@@ -1,9 +1,4 @@
-###Instructions
-#enter in cloud9 instance
-cd ~/environment/init_scripts/
-chmod 777 *
-./resize.sh
-cd ..
+cd ~
 
 #Install kubectl
 sudo curl --silent --location -o /usr/local/bin/kubectl \
@@ -78,10 +73,6 @@ eksctl version
 eksctl completion bash >> ~/.bash_completion
 . /etc/profile.d/bash_completion.sh
 . ~/.bash_completion
-
-####
-#After cluster creation 
-
 
 #Export the Worker Role Name for use throughout the workshop
 STACK_NAME=$(eksctl get nodegroup --cluster eksworkshop-eksctl -o json | jq -r '.[].StackName')
